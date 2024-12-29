@@ -1,5 +1,4 @@
 // // Question 1 //
-
 // let username: string = "asad";
 // let age: number = 10;
 // let isStudent: boolean = true;
@@ -8,7 +7,7 @@
 
 
 // // Question 2 //
-// let Addnumber = (a: number, b: number): number => {
+// const addNumbers = (a: number, b: number): number => {
 //   return a + b;
 // };
 // console.log(Addnumber(9, 7));
@@ -108,37 +107,34 @@
 
 // // Question 9 //
 // class Product {
-//   id: number;
-//   name: string;
-//   price: number;
-//   quantity: number;
+//     id: number;
+//     name: string;
+//     price: number;
+//     quantity: number;
 
-//   constructor(id: number, name: string, price: number, quantity: number) {
-//     this.id = id;
-//     this.name = name;
-//     this.price = price;
-//     this.quantity = quantity;
-
-
-//   }
-//   updateQuantity=(qty:number): void =>{
-//     this.quantity += qty;
-//   }
-
-//   totalPrice = () :number =>{
-//     return this.price*this.quantity;
-//   }
-
+//     constructor(id: number, name: string, price: number, quantity: number) {
+//         this.id = id;
+//         this.name = name;
+//         this.price = price;
+//         this.quantity = quantity;
+//     }
+//     // Method to update the quantity
+//     updateQuantity(newQuantity: number): void {
+//         this.quantity = newQuantity;
+//     }
+//     // Method to calculate the total price for the available stock
+//     calculateTotalPrice(): number {
+//         return this.price * this.quantity;
+//     }
 // }
-
-// var product1 = new Product(1,"ali",40,2)
-// var product2 = new Product(2,"M.ali",30,1)
-
-// product1.updateQuantity(5);
-// console.log(product1.totalPrice());
-
-// product2.updateQuantity(10);
-// console.log(product2.totalPrice());
+// // Create a new product instance
+// const product = new Product(1, 'Laptop', 1000, 5);
+// // Print the initial total price
+// console.log(`Total price for available stock: $${product.calculateTotalPrice()}`);
+// // Update the quantity
+// product.updateQuantity(10);
+// // Print the updated total price
+// console.log(`Updated total price for available stock: $${product.calculateTotalPrice()}`);
 
 
 // // Question 11 //
@@ -173,7 +169,6 @@
 //     this.username = username;
 //     this.price = price;
 //     this.quantity = quantity;
-
 //   }
 
 // }
@@ -195,22 +190,20 @@
 // console.log(`Total price of all products in the cart: ${TotalPrice(cart)}`);
 
 
-// // Question 13 //
-// function findMax(numbers: number[]): number {
-//   if (numbers.length === 0) {
-//       throw new Error("Array is empty");
-//   }
-//   let max = numbers[0];
-//   for (let i = 1; i < numbers.length; i++) {
-//       if (numbers[i] > max) {
-//           max = numbers[i];
+//  // Question 13 //
+//   const findMax=(arr: number[]): number =>{
+//   let max = arr[0];
+//   // Loop through the array and compare each number to find the largest
+//   for (let i = 1; i < arr.length; i++) {
+//       if (arr[i] > max) {
+//           max = arr[i];
 //       }
 //   }
 //   return max;
 // }
 
-// console.log(findMax([1, 2, 3, 4, 5]));
-// console.log(findMax([1,3,9,11,5]));
+// console.log(findMax([10, 20, 30, 5])); 
+// console.log(findMax([-10, -20, -30, -5]));
 
 
 
@@ -219,11 +212,11 @@
 //   firstName:string;
 //   lastName : string;
 
-
 //   constructor(firstName:string,lastName : string){
 //     this.firstName = firstName;
 //     this.lastName = lastName;
 //   }
+
 //   getfullName () :string {
 //   return `${this.firstName} ${this.lastName}`;
 // }
@@ -236,33 +229,19 @@
 
 // Question 15 //
 // enum Color {
-//     Red,
-//     Green,
-//     Blue
+//   Red = "Red",
+//   Green = "Green",
+//   Blue = "Blue"
 // }
 
-// function colorToString(color: Color): string {
-//     switch (color) {
-//         case Color.Red:
-//             return "Red";
-//         case Color.Green:
-//             return "Green";
-//         case Color.Blue:
-//             return "Blue";
-//         default:
-//             return "Unknown Color";
-//     }
+// // Function that takes a Color and returns its string representation
+// function getColorString(color: Color): string {
+//   return color;
 // }
 
-// console.log(colorToString(Color.Red));   
-// console.log(colorToString(Color.Green)); 
-// console.log(colorToString(Color.Blue));  
-
-
-// Question 17 //
-
-
-
+// console.log(getColorString(Color.Red));   
+// console.log(getColorString(Color.Green));
+// console.log(getColorString(Color.Blue)); 
 
 // // Question 16 //
 // interface Student {
@@ -277,7 +256,6 @@
 //     totalGrade += student.grade;
 //   }
 //   return totalGrade/students.length;
-  
 // }
 
 // const students:Student[]=[
@@ -288,32 +266,24 @@
 
 // console.log(AverageGrade(students));
 
-
 // Question 22 //
-// Define the TrafficLight enum with values Red, Yellow, and Green
-enum TrafficLight {
-    Red = "Red",
-    Yellow = "Yellow",
-    Green = "Green"
-  }
-  
-  function getAction(light: TrafficLight): string {
-    switch (light) {
-      case TrafficLight.Red:
-        return "Stop";
-      case TrafficLight.Yellow:
-        return "Get Ready";
-      case TrafficLight.Green:
-        return "Go";
-      default:
-        return "Unknown light"; // This handles any unexpected values
-    }
-  }
-  
-  console.log(getAction(TrafficLight.Red)); // Output: "Stop"
-  console.log(getAction(TrafficLight.Yellow)); // Output: "Get Ready"
-  console.log(getAction(TrafficLight.Green)); // Output: "Go"
-  
+// enum TrafficLight {
+//     Red = "Stop",
+//     Yellow = "Get Ready",
+//     Green = "Go"
+// }
+
+// // Function to return the action based on the traffic light color
+// function getAction(light: TrafficLight): string {
+//     return light; 
+// }
+
+// console.log(getAction(TrafficLight.Red));    
+// console.log(getAction(TrafficLight.Yellow)); 
+// console.log(getAction(TrafficLight.Green));  
+
+
+
 
 
 
